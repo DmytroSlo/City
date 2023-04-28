@@ -6,5 +6,6 @@ public class Main {
 
         Country cout = new Country();
         cout.countryCapital();
+        cout.cityCountry();
     }
 }

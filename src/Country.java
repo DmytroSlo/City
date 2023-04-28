@@ -2,13 +2,14 @@ import java.util.*;
 
 public class Country {
 
+    private Map<String, String> map = new HashMap<>();
+
     public Country(){
 
     }
 
     public void countryCapital() {
         Scanner ask = new Scanner(System.in);
-        Map<String, String> map = new HashMap<>();
         System.out.println("Wpisz stolica, a dalej kraj do którego ona odnosi się. Oby skończyć wpiś \"/\"");
 
         while(true) {
@@ -35,4 +36,22 @@ public class Country {
 
     }
 
+    public void cityCountry() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Wpisz stolice, a my damy Ci kraj! Oby przerwać natisni \"/\"");
+
+        while(true){
+            String res = scan.nextLine();
+
+            if(res.equals("/")){
+                break;
+            }
+
+            for(Map.Entry<String, String> el : map.entrySet()) {
+                if (res.equals(el.getKey())) {
+                    System.out.println("Kraj: " + el.getValue());
+                }
+            }
+        }
+    }
 }
